@@ -13,18 +13,18 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/observer1"
+            android:id="@+id/insert_money"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="观察者模式(cus)" />
+            android:text="投币" />
 
         <Button
-            android:id="@+id/observer2"
+            android:id="@+id/back_money"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="观察者模式(inner)" />
+            android:text="退币" />
     </LinearLayout>
 
     <LinearLayout
@@ -34,18 +34,29 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/state"
+            android:id="@+id/turn_trunk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="状态机模式" />
+            android:text="转动手柄" />
 
         <Button
-            android:id="@+id/factory"
+            android:id="@+id/add_goods"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="工厂模式" />
+            android:text="增加商品" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100px"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/show_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.degsignmodel.observer;
+package com.example.degsignmodel.observerCustorm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
