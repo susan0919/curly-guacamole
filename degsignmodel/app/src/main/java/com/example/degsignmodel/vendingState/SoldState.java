@@ -36,10 +36,6 @@ public class SoldState implements IState {
         }
     }
 
-    @Override
-    public String getMsg() {
-        return msg;
-    }
 
 
 }

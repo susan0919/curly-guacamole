@@ -13,7 +13,6 @@ public class NoMoneyState implements IState {
     public void insertMoney() {
         msg = "投币成功";
         machine.setState(machine.getHasMoneyState());
-
     }
 
     @Override
@@ -31,10 +30,6 @@ public class NoMoneyState implements IState {
         msg = "非法状态";
     }
 
-    @Override
-    public String getMsg() {
-        return msg;
-    }
 
 
 }

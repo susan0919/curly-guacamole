@@ -39,9 +39,5 @@ public class HasMoneyState implements IState {
 
     }
 
-    @Override
-    public String getMsg() {
-        return msg;
-    }
 
 }

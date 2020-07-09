@@ -68,10 +68,6 @@ public class VendingMachine {
         return this.counts;
     }
 
-    public IState getCurrentState() {
-        return currentState;
-    }
-
     public HasMoneyState getHasMoneyState() {
         return hasMoneyState;
     }
@@ -95,8 +91,5 @@ public class VendingMachine {
         return winState;
     }
 
-    public String getMsg() {
-        return currentState.getMsg();
-    }
 
 }

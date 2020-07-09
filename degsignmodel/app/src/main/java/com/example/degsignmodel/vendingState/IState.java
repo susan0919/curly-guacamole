@@ -21,10 +21,4 @@ public interface IState {
      */
     void dispense();
 
-    /**
-     * 获取状态信息
-     */
-
-    String getMsg();
-
 }

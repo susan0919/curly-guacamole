@@ -43,8 +43,4 @@ public class WinState implements IState {
         }
     }
 
-    @Override
-    public String getMsg() {
-        return msg;
-    }
 }

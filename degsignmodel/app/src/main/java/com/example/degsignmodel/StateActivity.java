@@ -70,7 +70,6 @@ public class StateActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        msgEditText.setText(machine.getMsg());
         switch (v.getId()) {
             case R.id.insert_money:
                 machine.insertMoney();

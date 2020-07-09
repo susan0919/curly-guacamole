@@ -29,10 +29,5 @@ public class SoldOutState implements IState {
         msg = "非法状态";
     }
 
-    @Override
-    public String getMsg() {
-        return msg;
-    }
-
 
 }
