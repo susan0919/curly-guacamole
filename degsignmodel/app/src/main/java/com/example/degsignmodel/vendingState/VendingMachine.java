@@ -1,4 +1,4 @@
-package com.example.degsignmodel.state;
+package com.example.degsignmodel.vendingState;
 
 import android.util.Log;
 
@@ -55,7 +55,9 @@ public class VendingMachine {
 
     public void dispense() {
         Log.d(TAG, "售出一件商品");
-        currentState.dispense();
+        if (counts != 0) {
+            counts -= 1;
+        }
     }
 
     public void setState(IState state) {

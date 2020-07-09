@@ -1,14 +1,15 @@
-package com.example.degsignmodel.state;
+package com.example.degsignmodel;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.degsignmodel.R;
+import com.example.degsignmodel.vendingState.VendingMachine;
 
 public class StateActivity extends AppCompatActivity implements View.OnClickListener {
     private Button insertButton;
@@ -16,7 +17,7 @@ public class StateActivity extends AppCompatActivity implements View.OnClickList
     private Button trunkButton;
     private Button addButton;
     private VendingMachine machine;
-    private TextView msgTextView;
+    private EditText msgEditText;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class StateActivity extends AppCompatActivity implements View.OnClickList
         backButton = findViewById(R.id.back_money);
         trunkButton = findViewById(R.id.turn_trunk);
         addButton = findViewById(R.id.add_goods);
-        msgTextView = findViewById(R.id.show_msg);
+        msgEditText = findViewById(R.id.show_msg);
     }
 
     private void initListener() {
@@ -69,7 +70,7 @@ public class StateActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        msgTextView.setText(machine.getMsg());
+        msgEditText.setText(machine.getMsg());
         switch (v.getId()) {
             case R.id.insert_money:
                 machine.insertMoney();

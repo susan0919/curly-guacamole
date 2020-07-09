@@ -1,29 +1,27 @@
-package com.example.degsignmodel.state;
+package com.example.degsignmodel.vendingState;
 
-public class NoMoneyState implements IState {
-    private static final String TAG = NoMoneyState.class.getName();
+public class SoldOutState implements IState {
+    private static final String TAG = SoldOutState.class.getName();
     private String msg = "";
     private VendingMachine machine;
 
-    public NoMoneyState(VendingMachine machine) {
+    public SoldOutState(VendingMachine machine) {
         this.machine = machine;
     }
 
     @Override
     public void insertMoney() {
-        msg = "投币成功";
-        machine.setState(machine.getHasMoneyState());
-
+        msg = "投币失败，商品已售罄";
     }
 
     @Override
     public void backMoney() {
-        msg = "您未投币，想退钱吗";
+        msg = "您未投币，想退钱么？...";
     }
 
     @Override
     public void turnTrunk() {
-        msg = "您未投币，转动手柄也没有用";
+        msg = "商品售罄，转动手柄也木有用";
     }
 
     @Override
@@ -35,4 +33,6 @@ public class NoMoneyState implements IState {
     public String getMsg() {
         return msg;
     }
+
+
 }

@@ -1,29 +1,30 @@
-package com.example.degsignmodel.state;
+package com.example.degsignmodel.vendingState;
 
 public interface IState {
     /**
      * 放钱
      */
-    public void insertMoney();
+    void insertMoney();
 
     /**
      * 退钱
      */
-    public void backMoney();
+    void backMoney();
 
     /**
      * 转动手柄
      */
-    public void turnTrunk();
+    void turnTrunk();
 
     /**
      * 出商品
      */
-    public void dispense();
+    void dispense();
 
     /**
      * 获取状态信息
      */
 
-    public String getMsg();
+    String getMsg();
+
 }

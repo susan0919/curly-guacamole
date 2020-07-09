@@ -1,7 +1,6 @@
 package com.example.degsignmodel;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.KeyEventDispatcher;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -16,7 +15,6 @@ import com.example.degsignmodel.observerCustorm.Observer2;
 import com.example.degsignmodel.observerInner.ObjectFrom3D;
 import com.example.degsignmodel.observerInner.ObjectFromSsq;
 import com.example.degsignmodel.observerInner.ObserverInner;
-import com.example.degsignmodel.state.StateActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

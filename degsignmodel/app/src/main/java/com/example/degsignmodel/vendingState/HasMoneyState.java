@@ -1,4 +1,4 @@
-package com.example.degsignmodel.state;
+package com.example.degsignmodel.vendingState;
 
 import java.util.Random;
 
@@ -43,4 +43,5 @@ public class HasMoneyState implements IState {
     public String getMsg() {
         return msg;
     }
+
 }

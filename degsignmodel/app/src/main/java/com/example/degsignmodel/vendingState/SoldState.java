@@ -1,4 +1,4 @@
-package com.example.degsignmodel.state;
+package com.example.degsignmodel.vendingState;
 
 public class SoldState implements IState {
     private static final String TAG = SoldState.class.getName();
@@ -40,4 +40,6 @@ public class SoldState implements IState {
     public String getMsg() {
         return msg;
     }
+
+
 }

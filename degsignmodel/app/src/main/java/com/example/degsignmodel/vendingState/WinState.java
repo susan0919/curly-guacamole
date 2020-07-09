@@ -1,4 +1,4 @@
-package com.example.degsignmodel.state;
+package com.example.degsignmodel.vendingState;
 
 public class WinState implements IState {
     private static final String TAG = WinState.class.getName();
