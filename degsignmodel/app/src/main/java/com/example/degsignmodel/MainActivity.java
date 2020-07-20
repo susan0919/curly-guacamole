@@ -19,9 +19,16 @@ import com.example.degsignmodel.observerInner.ObserverInner;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = MainActivity.class.getName();
-    private Button observerCusButton;
-    private Button observerInnerButton;
+    private Button observerButton;
+    private Button factoryButton;
     private Button stateButton;
+    private Button facadeButton;
+    private Button decoratorButton;
+    private Button templateMethodButton;
+    private Button strategyButton;
+    private Button commandButton;
+    private Button chainOfResponsibilityButton;
+    private Button mementoButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +39,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
-        observerCusButton = findViewById(R.id.observer1);
-        observerInnerButton = findViewById(R.id.observer2);
+        observerButton = findViewById(R.id.observer);
+        factoryButton = findViewById(R.id.factory);
         stateButton = findViewById(R.id.state);
+        facadeButton = findViewById(R.id.facade);
+        decoratorButton = findViewById(R.id.decorator);
+        templateMethodButton = findViewById(R.id.templateMethod);
+        strategyButton = findViewById(R.id.strategy);
+        commandButton = findViewById(R.id.command);
+        chainOfResponsibilityButton = findViewById(R.id.chainOfResponsibility);
+        mementoButton = findViewById(R.id.memento);
     }
 
     private void initListener() {
-        observerCusButton.setOnClickListener(this);
-        observerInnerButton.setOnClickListener(this);
+        observerButton.setOnClickListener(this);
+        factoryButton.setOnClickListener(this);
         stateButton.setOnClickListener(this);
+        facadeButton.setOnClickListener(this);
+        decoratorButton.setOnClickListener(this);
+        templateMethodButton.setOnClickListener(this);
+        strategyButton.setOnClickListener(this);
+        commandButton.setOnClickListener(this);
+        chainOfResponsibilityButton.setOnClickListener(this);
+        mementoButton.setOnClickListener(this);
     }
 
     @Override
@@ -51,18 +72,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.observer1:
+            case R.id.observer:
                 init3DEvent();
-                break;
-            case R.id.observer2:
-                initObserverEvent();
                 break;
             case R.id.state:
                 ComponentName componentName = new ComponentName(this, StateActivity.class);
                 Intent intent = new Intent();
                 intent.setComponent(componentName);
                 startActivity(intent);
-
                 break;
             default:
                 break;

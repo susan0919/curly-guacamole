@@ -2,7 +2,7 @@ package com.example.degsignmodel.vendingState;
 
 import android.util.Log;
 
-public class VendingMachine {
+public class VendingMachine implements IStateListener {
     public static final String TAG = VendingMachine.class.getName();
     public HasMoneyState hasMoneyState;
     public NoMoneyState noMoneyState;
@@ -54,7 +54,7 @@ public class VendingMachine {
     }
 
     public void dispense() {
-        Log.d(TAG, "售出一件商品");
+//        Log.d(TAG, "售出一件商品");
         if (counts != 0) {
             counts -= 1;
         }
@@ -66,6 +66,10 @@ public class VendingMachine {
 
     public int getCounts() {
         return this.counts;
+    }
+
+    public String getMsg() {
+        return currentState.getMsg();
     }
 
     public HasMoneyState getHasMoneyState() {
@@ -92,4 +96,8 @@ public class VendingMachine {
     }
 
 
+    @Override
+    public void stateChangeListener(String msg) {
+
+    }
 }

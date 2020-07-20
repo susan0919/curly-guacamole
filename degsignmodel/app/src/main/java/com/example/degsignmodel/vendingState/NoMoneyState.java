@@ -12,24 +12,31 @@ public class NoMoneyState implements IState {
     @Override
     public void insertMoney() {
         msg = "投币成功";
+        machine.stateChangeListener(msg);
         machine.setState(machine.getHasMoneyState());
     }
 
     @Override
     public void backMoney() {
         msg = "您未投币，想退钱吗";
+        machine.stateChangeListener(msg);
     }
 
     @Override
     public void turnTrunk() {
         msg = "您未投币，转动手柄也没有用";
+        machine.stateChangeListener(msg);
     }
 
     @Override
     public void dispense() {
         msg = "非法状态";
+        machine.stateChangeListener(msg);
     }
 
-
+    @Override
+    public String getMsg() {
+        return msg;
+    }
 
 }

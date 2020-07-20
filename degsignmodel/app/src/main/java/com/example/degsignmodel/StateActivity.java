@@ -87,5 +87,6 @@ public class StateActivity extends AppCompatActivity implements View.OnClickList
                 break;
         }
 
+        msgEditText.setText(machine.getMsg());
     }
 }

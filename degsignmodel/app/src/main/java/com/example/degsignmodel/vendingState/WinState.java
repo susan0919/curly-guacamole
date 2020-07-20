@@ -12,16 +12,19 @@ public class WinState implements IState {
     @Override
     public void insertMoney() {
         msg = "非法状态";
+        machine.stateChangeListener(msg);
     }
 
     @Override
     public void backMoney() {
         msg = "非法状态";
+        machine.stateChangeListener(msg);
     }
 
     @Override
     public void turnTrunk() {
         msg = "非法状态";
+        machine.stateChangeListener(msg);
     }
 
     @Override
@@ -30,17 +33,24 @@ public class WinState implements IState {
         machine.dispense();
         if (machine.getCounts() == 0) {
             msg = msg + "\n 商品已售罄";
+            machine.stateChangeListener(msg);
             machine.setState(machine.getSoldOutState());
         } else {
             machine.dispense();
             if (machine.getCounts() == 0) {
                 msg = msg + "\n 商品已售罄,奖品已成功领取";
+                machine.stateChangeListener(msg);
                 machine.setState(machine.getSoldOutState());
             } else {
                 msg = msg + "\n 奖品已成功领取";
+                machine.stateChangeListener(msg);
                 machine.setState(machine.getNoMoneyState());
             }
         }
     }
 
+    @Override
+    public String getMsg() {
+        return msg;
+    }
 }

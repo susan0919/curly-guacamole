@@ -13,18 +13,19 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/observer1"
+            android:id="@+id/observer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="观察者模式(cus)" />
+            android:text="观察者模式" />
 
         <Button
-            android:id="@+id/observer2"
+            android:id="@+id/factory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="观察者模式(inner)" />
+            android:text="工厂模式" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -41,11 +42,72 @@
             android:text="状态机模式" />
 
         <Button
-            android:id="@+id/factory"
+            android:id="@+id/facade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="工厂模式" />
+            android:text="外观模式" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60px"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/decorator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="装饰模式" />
+
+        <Button
+            android:id="@+id/templateMethod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="模板方法模式" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60px"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/strategy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="策略模式" />
+
+        <Button
+            android:id="@+id/command"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="命令模式" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60px"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/chainOfResponsibility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="责任链模式" />
+
+        <Button
+            android:id="@+id/memento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="备忘录模式" />
     </LinearLayout>
 
 </LinearLayout>

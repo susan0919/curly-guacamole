@@ -21,4 +21,6 @@ public interface IState {
      */
     void dispense();
 
+    String getMsg();
+
 }
