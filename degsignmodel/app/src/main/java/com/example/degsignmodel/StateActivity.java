@@ -20,6 +20,7 @@ public class StateActivity extends AppCompatActivity implements View.OnClickList
 
     private static final String TAG = StateActivity.class.getName();
     private Button vendingButton;
+    private Button threadButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +32,12 @@ public class StateActivity extends AppCompatActivity implements View.OnClickList
 
     private void initView() {
         vendingButton = findViewById(R.id.vending);
+        threadButton = findViewById(R.id.thread);
     }
 
     private void initListener() {
         vendingButton.setOnClickListener(this);
+        threadButton.setOnClickListener(this);
     }
 
     @Override
@@ -50,6 +53,11 @@ public class StateActivity extends AppCompatActivity implements View.OnClickList
                 Intent intent = new Intent();
                 intent.setComponent(componentName);
                 startActivity(intent);
+                break;
+            case R.id.thread:
+                Intent intentThread = new Intent();
+                intentThread.setComponent(new ComponentName(this, StateThreadActivity.class));
+                startActivity(intentThread);
                 break;
             default:
                 break;
