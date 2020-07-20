@@ -1,66 +1,40 @@
 package com.example.degsignmodel;
 
+import android.content.ComponentName;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.degsignmodel.R;
-import com.example.degsignmodel.vendingState.VendingMachine;
+import com.example.degsignmodel.observerCustorm.ObjectFor3D;
+import com.example.degsignmodel.observerCustorm.Observer1;
+import com.example.degsignmodel.observerCustorm.Observer2;
+import com.example.degsignmodel.observerInner.ObjectFrom3D;
+import com.example.degsignmodel.observerInner.ObjectFromSsq;
+import com.example.degsignmodel.observerInner.ObserverInner;
 
 public class StateActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button insertButton;
-    private Button backButton;
-    private Button trunkButton;
-    private Button addButton;
-    private VendingMachine machine;
-    private EditText msgEditText;
+
+    private static final String TAG = StateActivity.class.getName();
+    private Button vendingButton;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_state);
-        machine = new VendingMachine(5);
         initView();
         initListener();
     }
 
     private void initView() {
-        insertButton = findViewById(R.id.insert_money);
-        backButton = findViewById(R.id.back_money);
-        trunkButton = findViewById(R.id.turn_trunk);
-        addButton = findViewById(R.id.add_goods);
-        msgEditText = findViewById(R.id.show_msg);
+        vendingButton = findViewById(R.id.vending);
     }
 
     private void initListener() {
-        insertButton.setOnClickListener(this);
-        backButton.setOnClickListener(this);
-        trunkButton.setOnClickListener(this);
-        addButton.setOnClickListener(this);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
+        vendingButton.setOnClickListener(this);
     }
 
     @Override
@@ -69,24 +43,40 @@ public class StateActivity extends AppCompatActivity implements View.OnClickList
     }
 
     @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.insert_money:
-                machine.insertMoney();
-                break;
-            case R.id.back_money:
-                machine.backMoney();
-                break;
-            case R.id.turn_trunk:
-                machine.turnTrunk();
-                break;
-            case R.id.add_goods:
-                machine.addGoods(3);
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.vending:
+                ComponentName componentName = new ComponentName(this, StateVendingActivity.class);
+                Intent intent = new Intent();
+                intent.setComponent(componentName);
+                startActivity(intent);
                 break;
             default:
                 break;
         }
-
-        msgEditText.setText(machine.getMsg());
     }
+
+    private void init3DEvent() {
+        ObjectFor3D objectFor3D = new ObjectFor3D();
+
+        Observer1 observer1 = new Observer1(objectFor3D);
+        Observer2 observer2 = new Observer2(objectFor3D);
+
+        objectFor3D.setMsg("20140420的3D号码是：127");
+        objectFor3D.setMsg("20140421的3D号码是：333");
+    }
+
+    private void initObserverEvent() {
+        Log.d(TAG, "initObserverEvent");
+        ObjectFrom3D objectFrom3D = new ObjectFrom3D();
+        ObjectFromSsq objectFromSsq = new ObjectFromSsq();
+
+        ObserverInner observer = new ObserverInner();
+        observer.registerObserver(objectFrom3D);
+        observer.registerObserver(objectFromSsq);
+
+        objectFrom3D.setMsg("hello 3d'nums : 110");
+        objectFromSsq.setMsg("ssq'nums : 12,13,31,5,4,3 15");
+    }
+
 }
