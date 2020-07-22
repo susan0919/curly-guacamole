@@ -3,7 +3,7 @@ package com.example.degsignmodel.loginController;
 import android.content.Context;
 import android.content.Intent;
 
-import com.example.degsignmodel.LoginActivity;
+import com.example.degsignmodel.activity.LoginActivity;
 
 public class LoginOutState implements UserState {
     @Override

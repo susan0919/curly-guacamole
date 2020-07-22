@@ -1,4 +1,4 @@
-package com.example.degsignmodel;
+package com.example.degsignmodel.activity;
 
 import android.view.View;
 

@@ -1,4 +1,6 @@
-package com.example.degsignmodel;
+package com.example.degsignmodel.activity;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -7,8 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.degsignmodel.R;
 import com.example.degsignmodel.observerCustorm.ObjectFor3D;
 import com.example.degsignmodel.observerCustorm.Observer1;
 import com.example.degsignmodel.observerCustorm.Observer2;
@@ -16,28 +17,52 @@ import com.example.degsignmodel.observerInner.ObjectFrom3D;
 import com.example.degsignmodel.observerInner.ObjectFromSsq;
 import com.example.degsignmodel.observerInner.ObserverInner;
 
-public class StateActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String TAG = StateActivity.class.getName();
-    private Button vendingButton;
-    private Button threadButton;
+    private static final String TAG = MainActivity.class.getName();
+    private Button observerButton;
+    private Button factoryButton;
+    private Button stateButton;
+    private Button facadeButton;
+    private Button decoratorButton;
+    private Button templateMethodButton;
+    private Button strategyButton;
+    private Button commandButton;
+    private Button chainOfResponsibilityButton;
+    private Button mementoButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_state);
+        setContentView(R.layout.activity_main);
         initView();
         initListener();
     }
 
     private void initView() {
-        vendingButton = findViewById(R.id.vending);
-        threadButton = findViewById(R.id.thread);
+        observerButton = findViewById(R.id.observer);
+        factoryButton = findViewById(R.id.factory);
+        stateButton = findViewById(R.id.state);
+        facadeButton = findViewById(R.id.facade);
+        decoratorButton = findViewById(R.id.decorator);
+        templateMethodButton = findViewById(R.id.templateMethod);
+        strategyButton = findViewById(R.id.strategy);
+        commandButton = findViewById(R.id.command);
+        chainOfResponsibilityButton = findViewById(R.id.chainOfResponsibility);
+        mementoButton = findViewById(R.id.memento);
     }
 
     private void initListener() {
-        vendingButton.setOnClickListener(this);
-        threadButton.setOnClickListener(this);
+        observerButton.setOnClickListener(this);
+        factoryButton.setOnClickListener(this);
+        stateButton.setOnClickListener(this);
+        facadeButton.setOnClickListener(this);
+        decoratorButton.setOnClickListener(this);
+        templateMethodButton.setOnClickListener(this);
+        strategyButton.setOnClickListener(this);
+        commandButton.setOnClickListener(this);
+        chainOfResponsibilityButton.setOnClickListener(this);
+        mementoButton.setOnClickListener(this);
     }
 
     @Override
@@ -48,16 +73,14 @@ public class StateActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.vending:
-                ComponentName componentName = new ComponentName(this, StateVendingActivity.class);
+            case R.id.observer:
+                init3DEvent();
+                break;
+            case R.id.state:
+                ComponentName componentName = new ComponentName(this, StateActivity.class);
                 Intent intent = new Intent();
                 intent.setComponent(componentName);
                 startActivity(intent);
-                break;
-            case R.id.thread:
-                Intent intentThread = new Intent();
-                intentThread.setComponent(new ComponentName(this, StateThreadActivity.class));
-                startActivity(intentThread);
                 break;
             default:
                 break;

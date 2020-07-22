@@ -1,4 +1,4 @@
-package com.example.degsignmodel;
+package com.example.degsignmodel.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,9 +8,10 @@ import android.widget.EditText;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.degsignmodel.R;
 import com.example.degsignmodel.vendingState.VendingMachine;
 
-public class StateThreadActivity extends AppCompatActivity implements View.OnClickListener {
+public class StateVendingActivity extends AppCompatActivity implements View.OnClickListener {
     private Button insertButton;
     private Button backButton;
     private Button trunkButton;

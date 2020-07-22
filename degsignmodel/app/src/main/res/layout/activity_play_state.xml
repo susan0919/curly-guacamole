@@ -6,35 +6,18 @@
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/play_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60px"
-        android:orientation="horizontal">
+        android:gravity="center_horizontal"
+        android:text="播放器状态机"
+        android:textSize="28dp" />
 
-        <Button
-            android:id="@+id/vending"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="贩卖机实例" />
-
-    </LinearLayout>
-
-    <LinearLayout
+    <ListView
+        android:id="@+id/playlist"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60px"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/thread"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="线程状态机实例" />
-
-    </LinearLayout>
+        android:layout_height="317dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,13 +26,31 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/player"
+            android:id="@+id/pre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="播放器状态机实例" />
+            android:text="上一曲" />
 
+        <Button
+            android:id="@+id/play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="播放" />
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="下一曲" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/current_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30px" />
 
 </LinearLayout>
