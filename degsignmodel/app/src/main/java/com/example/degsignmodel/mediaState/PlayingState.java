@@ -1,5 +1,7 @@
 package com.example.degsignmodel.mediaState;
 
+import com.example.degsignmodel.utils.Constants;
+
 public class PlayingState extends PlayerState {
     public PlayingState(IPlayer iPlayer) {
         super(iPlayer);
@@ -8,15 +10,15 @@ public class PlayingState extends PlayerState {
     @Override
     public void handle(int action) {
         switch (action) {
-            case PLAY_OR_PAUSE:
+            case Constants.VideoPlayerConstants.PLAY_OR_PAUSE:
                 player.pause();
                 player.setState(new PauseState(player));
                 break;
-            case STOP:
+            case Constants.VideoPlayerConstants.STOP:
                 player.stop();
                 player.setState(new StopPlayState(player));
                 break;
-            case SHOW_AD:
+            case Constants.VideoPlayerConstants.SHOW_AD:
                 player.showAd();
                 player.setState(new ShowAddState(player));
                 break;

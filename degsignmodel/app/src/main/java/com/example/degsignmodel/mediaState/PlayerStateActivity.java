@@ -10,9 +10,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.degsignmodel.R;
+import com.example.degsignmodel.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class PlayerStateActivity extends AppCompatActivity implements View.OnClickListener {
     private Button preButton;
@@ -21,9 +23,6 @@ public class PlayerStateActivity extends AppCompatActivity implements View.OnCli
     private Button stopButton;
     private Button addAdButton;
     private ListView playList;
-    public static final int PLAY_OR_PAUSE = 0;
-    public static final int STOP = 1;
-    public static final int SHOW_AD = 2;
     private VideoPlayer player;
     private Adapter adapter;
     private List<String> list = new ArrayList<>();
@@ -85,18 +84,19 @@ public class PlayerStateActivity extends AppCompatActivity implements View.OnCli
         switch (view.getId()) {
             case R.id.pre:
             case R.id.play:
+                player.request(Constants.VideoPlayerConstants.PREPARE);
+                break;
             case R.id.next:
-                player.request(PLAY_OR_PAUSE);
+                player.request(Constants.VideoPlayerConstants.PLAY_OR_PAUSE);
                 break;
             case R.id.stop:
-                player.request(STOP);
+                player.request(Constants.VideoPlayerConstants.STOP);
                 break;
             case R.id.add_ad:
-                player.request(SHOW_AD);
+                player.request(Constants.VideoPlayerConstants.SHOW_AD);
                 break;
             default:
                 break;
         }
-
     }
 }

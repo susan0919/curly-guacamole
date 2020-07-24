@@ -1,6 +1,6 @@
 package com.example.degsignmodel.mediaState;
 
-public class VideoPlayer extends IPlayer {
+public class VideoPlayer implements IPlayer {
     private PlayerState state = new StopPlayState(this);
 
     @Override

@@ -1,5 +1,7 @@
 package com.example.degsignmodel.mediaState;
 
+import com.example.degsignmodel.utils.Constants;
+
 class StopPlayState extends PlayerState {
     public StopPlayState(IPlayer player) {
         super(player);
@@ -8,9 +10,10 @@ class StopPlayState extends PlayerState {
     @Override
     public void handle(int action) {
         switch (action) {
-            case PLAY_OR_PAUSE:
-                player.play();
-                player.setState(new PlayingState(player));
+            case Constants.VideoPlayerConstants.PLAY_OR_PAUSE:
+            case Constants.VideoPlayerConstants.NEXT:
+            case Constants.VideoPlayerConstants.PRE:
+                player.setState(new PrepareState(player));
                 break;
             default:
                 throw new IllegalArgumentException("ERROE ACTION:" + action + ",current state:" + this.getClass().getSimpleName());

@@ -1,15 +1,15 @@
 package com.example.degsignmodel.mediaState;
 
-public abstract class IPlayer {
-    public abstract void request(int action);
+public interface IPlayer {
+     void request(int action);
 
-    public abstract void setState(PlayerState state);
+     void setState(PlayerState state);
 
-    public abstract void play();
+     void play();
 
-    public abstract void stop();
+     void stop();
 
-    public abstract void pause();
+     void pause();
 
-    public abstract void showAd();
+     void showAd();
 }

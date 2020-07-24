@@ -2,8 +2,8 @@ package com.example.degsignmodel.mediaState;
 
 import com.example.degsignmodel.utils.Constants;
 
-public class ShowAddState extends PlayerState {
-    public ShowAddState(IPlayer iPlayer) {
+public class PrepareState extends PlayerState {
+    public PrepareState(IPlayer iPlayer) {
         super(iPlayer);
     }
 
@@ -13,6 +13,12 @@ public class ShowAddState extends PlayerState {
             case Constants.VideoPlayerConstants.PLAY_OR_PAUSE:
                 player.play();
                 player.setState(new PlayingState(player));
+                break;
+            case Constants.VideoPlayerConstants.STOP:
+                player.stop();
+                player.setState(new StopPlayState(player));
+                break;
+            case Constants.VideoPlayerConstants.SHOW_AD:
                 break;
             default:
                 throw new IllegalArgumentException("ERROE ACTION:" + action + "," + this.toString());
