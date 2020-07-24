@@ -1,4 +1,4 @@
-package com.example.degsignmodel.activity;
+package com.example.degsignmodel.vendingState;
 
 import android.os.Bundle;
 import android.view.View;

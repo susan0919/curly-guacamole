@@ -1,7 +1,5 @@
 package com.example.degsignmodel.mediaState;
 
-import com.example.degsignmodel.threadState.StopState;
-
 public class PlayingState extends PlayerState {
     public PlayingState(IPlayer iPlayer) {
         super(iPlayer);
@@ -17,6 +15,10 @@ public class PlayingState extends PlayerState {
             case STOP:
                 player.stop();
                 player.setState(new StopPlayState(player));
+                break;
+            case SHOW_AD:
+                player.showAd();
+                player.setState(new ShowAddState(player));
                 break;
             default:
                 throw new IllegalArgumentException("ERROE ACTION:" + action + ",current state:" + this.getClass().getSimpleName());

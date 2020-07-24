@@ -1,4 +1,4 @@
-package com.example.degsignmodel.activity;
+package com.example.degsignmodel.threadState;
 
 import android.os.Bundle;
 import android.view.View;

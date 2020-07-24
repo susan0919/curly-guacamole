@@ -1,4 +1,4 @@
-package com.example.degsignmodel.activity;
+package com.example.degsignmodel.loginController;
 
 import android.os.Bundle;
 

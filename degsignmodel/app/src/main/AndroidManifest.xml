@@ -16,9 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.StateVendingActivity" />
+        <activity android:name=".vendingState.StateVendingActivity" />
         <activity android:name=".activity.StateActivity" />
-        <activity android:name=".activity.StateThreadActivity" />
+        <activity android:name=".threadState.StateThreadActivity" />
+        <activity android:name=".mediaState.PlayerStateActivity" />
     </application>
 
 </manifest>
