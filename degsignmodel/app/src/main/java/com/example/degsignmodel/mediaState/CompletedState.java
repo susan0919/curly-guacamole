@@ -1,5 +1,8 @@
 package com.example.degsignmodel.mediaState;
 
+import static com.example.degsignmodel.utils.Constants.VideoPlayerConstants.PLAY_OR_PAUSE;
+import static com.example.degsignmodel.utils.Constants.VideoPlayerConstants.STOP;
+
 public class CompletedState extends PlayerState {
     public CompletedState(IPlayer iPlayer) {
         super(iPlayer);
@@ -17,7 +20,7 @@ public class CompletedState extends PlayerState {
                 player.setState(new StopPlayState(player));
                 break;
             default:
-                throw new IllegalArgumentException("ERROE ACTION:" + action + ",current state:" + this.getClass().getSimpleName());
+                throw new IllegalArgumentException("ERROR ACTION:" + action + ",current state:" + this.getClass().getSimpleName());
         }
     }
 }

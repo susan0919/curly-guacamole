@@ -20,6 +20,18 @@
         <activity android:name=".activity.StateActivity" />
         <activity android:name=".threadState.StateThreadActivity" />
         <activity android:name=".mediaState.PlayerStateActivity" />
+        <activity android:name=".bankProxy.BankActivity" />
+        <activity android:name=".activity.ProxyActivity" />
+        <activity android:name=".weatherDataObserver.WeatherDataActivity" />
+
+        <service
+            android:name=".bankProxy.BankService"
+            android:process="com.example.degsignmodel.bank">
+            <intent-filter>
+                <action android:name="com.example.degsignmodel.bank" />
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>

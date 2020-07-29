@@ -16,6 +16,9 @@ import com.example.degsignmodel.observerCustorm.Observer2;
 import com.example.degsignmodel.observerInner.ObjectFrom3D;
 import com.example.degsignmodel.observerInner.ObjectFromSsq;
 import com.example.degsignmodel.observerInner.ObserverInner;
+import com.example.degsignmodel.weatherDataObserver.WeatherDataActivity;
+
+import java.sql.BatchUpdateException;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button commandButton;
     private Button chainOfResponsibilityButton;
     private Button mementoButton;
+    private Button proxyButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         commandButton = findViewById(R.id.command);
         chainOfResponsibilityButton = findViewById(R.id.chainOfResponsibility);
         mementoButton = findViewById(R.id.memento);
+        proxyButton = findViewById(R.id.proxy);
     }
 
     private void initListener() {
@@ -63,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         commandButton.setOnClickListener(this);
         chainOfResponsibilityButton.setOnClickListener(this);
         mementoButton.setOnClickListener(this);
+        proxyButton.setOnClickListener(this);
     }
 
     @Override
@@ -74,13 +80,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.observer:
-                init3DEvent();
+                ComponentName componentObserver = new ComponentName(this, WeatherDataActivity.class);
+                startActivity(new Intent().setComponent(componentObserver));
                 break;
             case R.id.state:
                 ComponentName componentName = new ComponentName(this, StateActivity.class);
-                Intent intent = new Intent();
-                intent.setComponent(componentName);
-                startActivity(intent);
+                startActivity(new Intent().setComponent(componentName));
+                break;
+            case R.id.proxy:
+                ComponentName componentProxy = new ComponentName(this, ProxyActivity.class);
+                startActivity(new Intent().setComponent(componentProxy));
                 break;
             default:
                 break;
