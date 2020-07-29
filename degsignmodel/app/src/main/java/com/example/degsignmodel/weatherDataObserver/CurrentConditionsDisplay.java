@@ -11,7 +11,7 @@ public class CurrentConditionsDisplay implements IObserver, IDisplayElement {
 
     @Override
     public void display() {
-
+        int a = 0;
     }
 
     @Override
