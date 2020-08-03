@@ -15,6 +15,6 @@ public class CurrentConditionsDisplay implements IObserver, IDisplayElement {
 
     @Override
     public void update(float temp, float humudity, float pressure) {
-        System.out.print("current temp = " + temp + ",humudity = " + humudity);
+        System.out.print("CurrentConditionsDisplay current temp = " + temp + ",humudity = " + humudity);
     }
 }
